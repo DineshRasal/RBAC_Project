@@ -155,7 +155,8 @@ http://localhost:8080/swagger-ui.html
 ## Screenshots
 
 ### Register Page
-![Register Page](screenshots/register.png)
+<img width="1905" height="898" alt="image" src="https://github.com/user-attachments/assets/78a98e4d-e2fb-40b9-8810-1f9757b1c552" />
+
 
 ### Login Page
 ![Login Page](screenshots/login.png)
