@@ -159,16 +159,20 @@ http://localhost:8080/swagger-ui.html
 
 
 ### Login Page
-![Login Page](screenshots/login.png)
+<img width="1671" height="883" alt="image" src="https://github.com/user-attachments/assets/361e1ada-c9dc-4473-804e-97cc2409477f" />
+
 
 ### Dashboard - USER Role
-![User Dashboard](screenshots/dashboard-user.png)
+<img width="1898" height="850" alt="image" src="https://github.com/user-attachments/assets/9621eff2-0e04-4a3c-a2be-feb059a6777b" />
+
 
 ### Dashboard - ADMIN Role
-![Admin Dashboard](screenshots/dashboard-admin.png)
+<img width="1910" height="887" alt="image" src="https://github.com/user-attachments/assets/c5275979-5630-4a63-82f9-fa19461d77c7" />
+
 
 ### Swagger UI
-![Swagger](screenshots/swagger.png)
+<img width="946" height="745" alt="image" src="https://github.com/user-attachments/assets/02d8a83c-fb9d-4deb-8b5b-90be28d72d3b" />
+
 
 ---
 
