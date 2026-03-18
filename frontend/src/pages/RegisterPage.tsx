@@ -7,12 +7,14 @@ import type { RegisterForm } from '../types'
 export default function RegisterPage() {
   const navigate = useNavigate()
 
+  //useForm is used to manage form inputs, submission, and validation easily
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<RegisterForm>()
 
+  //useMutation is used to perform API calls and handle responses.
   const mutation = useMutation({
     mutationFn: registerUser,
     onSuccess: () => {
@@ -20,6 +22,7 @@ export default function RegisterPage() {
     },
   })
 
+  //onSubmit sends form data to the backend using mutation.
   const onSubmit = (data: RegisterForm) => mutation.mutate(data)
 
   return (
