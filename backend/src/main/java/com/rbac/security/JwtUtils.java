@@ -1,8 +1,8 @@
 package com.rbac.security;
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.*; //Library used to create and validate JWT tokens
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Value; //Used to read values from application.properties
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -18,17 +18,17 @@ public class JwtUtils {
     @Value("${jwt.expiration}")
     private long expiration;
 
-    private Key getSigningKey() {
+    private Key getSigningKey() { //Converts secret string into secure key used for signing JWT
         return Keys.hmacShaKeyFor(secret.getBytes());
     }
 
-    public String generateToken(UserDetails userDetails) {
+    public String generateToken(UserDetails userDetails) { //used to genrate token
         return Jwts.builder()
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
-                .compact();
+                .compact(); //Convert everything into final token string
     }
 
     public String extractEmail(String token) {
@@ -40,7 +40,7 @@ public class JwtUtils {
                 .getSubject();
     }
 
-    public boolean isTokenValid(String token, UserDetails userDetails) {
+    public boolean isTokenValid(String token, UserDetails userDetails) { //Checks if token is valid or not
         String email = extractEmail(token);
         return email.equals(userDetails.getUsername()) && !isTokenExpired(token);
     }
