@@ -19,6 +19,6 @@ public class RegisterRequest {
     @NotBlank(message = "Password is required")
     private String password;
 
-    @NotNull(message = "Role is required")
+    @NotNull(message = "Role is required") //User must select role (USER / ADMIN)
     private Role role;
 }
