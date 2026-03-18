@@ -23,12 +23,12 @@ public class ContentController {
     @GetMapping("/user")
     @Operation(summary = "User endpoint - requires USER or ADMIN role")
     public ResponseEntity<Map<String, String>> userContent() {
-        return ResponseEntity.ok(Map.of("message", "Welcome! You have USER access. Here is your personal dashboard content."));
+        return ResponseEntity.ok(Map.of("message", "Welcome! You have USER access. Here is your personal dashboard content"));
     }
 
     @GetMapping("/admin")
     @Operation(summary = "Admin endpoint - requires ADMIN role only")
     public ResponseEntity<Map<String, String>> adminContent() {
-        return ResponseEntity.ok(Map.of("message", "Admin panel: You have full system access. Manage users and settings here."));
+        return ResponseEntity.ok(Map.of("message", "Admin panel: You have full system access."));
     }
 }
