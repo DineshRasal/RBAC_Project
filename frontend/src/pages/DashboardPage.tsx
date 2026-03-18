@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query'
-import { useNavigate } from 'react-router-dom'
-import { fetchAdminContent, fetchPublicContent, fetchUserContent } from '../api/auth'
-import { useAuth } from '../hooks/useAuth'
+import { useQuery } from '@tanstack/react-query'//Used to fetch data from API
+import { useNavigate } from 'react-router-dom' //Used to redirect user to another page
+import { fetchAdminContent, fetchPublicContent, fetchUserContent } from '../api/auth'//Functions to call backend APIs
+import { useAuth } from '../hooks/useAuth'//Custom hook to get user + logout function
 
 export default function DashboardPage() {
   const navigate = useNavigate()
@@ -15,12 +15,12 @@ export default function DashboardPage() {
     enabled: user?.role === 'ADMIN',
   })
 
-  const handleLogout = () => {
+  const handleLogout = () => { //remove token and user redirect to login page
     logout()
     navigate('/login')
   }
 
-  if (!user) {
+  if (!user) {       
     navigate('/login')
     return null
   }
